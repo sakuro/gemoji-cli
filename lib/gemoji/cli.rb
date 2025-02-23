@@ -3,7 +3,7 @@
 require_relative "cli/version"
 
 module Gemoji
-  module Cli
+  module CLI
     class Error < StandardError; end
     # Your code goes here...
   end

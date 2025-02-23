@@ -4,9 +4,6 @@ require "bundler/gem_tasks"
 require "rspec/core/rake_task"
 
 RSpec::Core::RakeTask.new(:spec)
-
-require "rubocop/rake_task"
-
-RuboCop::RakeTask.new
+Dir["lib/tasks/*.rake"].each { load it }
 
 task default: %i[spec rubocop]
