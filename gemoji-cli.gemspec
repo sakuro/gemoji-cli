@@ -8,8 +8,13 @@ Gem::Specification.new do |spec|
   spec.authors = ["OZAWA Sakuro"]
   spec.email = ["10973+sakuro@users.noreply.github.com"]
 
-  spec.summary = "gemoji-cli"
-  spec.description = "gemoji-cli"
+  spec.summary = "GitHub emoji converter and lister"
+  spec.description = <<~DESC
+    A command-line tool that:
+    - Converts GitHub emoji codes to Unicode.
+    - Lists supported emojis in Markdown or CSV format.
+  DESC
+
   spec.homepage = "https://github.com/sakuro/gemoji-cli"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.4.2"
