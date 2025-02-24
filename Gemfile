@@ -20,3 +20,7 @@ end
 group :development, :test do
   gem "rspec"
 end
+
+group :test do
+  gem "tty-command"
+end

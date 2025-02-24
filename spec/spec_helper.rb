@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "gemoji/cli"
+Dir.glob("spec/support/**/*.rb").each { load it }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
