@@ -8,7 +8,7 @@ RSpec.describe Gemoji::CLI::Commands::List, type: :command do
     let(:head) { lines.take(2) }
     let(:body) { lines.drop(2) }
 
-    it "prints the list of emoji in markdown format" do
+    it "prints the list of emoji in Markdown format" do
       aggregate_failures do
         expect(head).to eq(["| Name | Raw |\n", "|------|-----|\n"])
         expect(body).to all(match(/^\| :\S+: \| \S+ \|$/))
@@ -21,7 +21,7 @@ RSpec.describe Gemoji::CLI::Commands::List, type: :command do
     let(:head) { lines.take(2) }
     let(:body) { lines.drop(2) }
 
-    it "prints the list of emoji in markdown format" do
+    it "prints the list of emoji in Markdown format" do
       aggregate_failures do
         expect(head).to eq(["| Name | Raw |\n", "|------|-----|\n"])
         expect(body).to all(match(/^\| :\S+: \| \S+ \|$/))
@@ -34,7 +34,7 @@ RSpec.describe Gemoji::CLI::Commands::List, type: :command do
     let(:head) { lines.take(1) }
     let(:body) { lines.drop(1) }
 
-    it "prints the list of emoji in markdown format" do
+    it "prints the list of emoji in CSV format" do
       aggregate_failures do
         expect(head).to eq(["Name,Raw\n"])
         expect(body).to all(match(/^:\S+:,\S+$/))
