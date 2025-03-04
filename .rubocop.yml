@@ -45,3 +45,10 @@ Style/DocumentationMethod:
     - AllowedMethods
   AllowedMethods:
     - call
+
+RSpec/ContextWording:
+  inherit_mode:
+    merge:
+      - Prefixes
+  Prefixes:
+    - "on"
