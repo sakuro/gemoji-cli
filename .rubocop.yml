@@ -52,4 +52,3 @@ RSpec/ContextWording:
       - Prefixes
   Prefixes:
     - "on"
-    - when
