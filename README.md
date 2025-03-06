@@ -2,12 +2,12 @@
 
 :construction: **This project is under active development** :construction:
 
-A command-line interface for searching and displaying emoji characters from your terminal. Built on top of GitHub's [gemoji](https://github.com/github/gemoji) library, this tool provides an easy way to find and use emojis in your daily terminal work.
+A command-line interface for converting emoji codes to Unicode characters and listing available emojis. Built on top of GitHub's [gemoji](https://github.com/github/gemoji) library, this tool provides an easy way to work with emojis in your terminal.
 
 ## Features
 
-- :mag: Search emojis by name, description, or aliases
-- :dart: Exact and fuzzy matching support
+- :arrows_counterclockwise: Convert GitHub-style emoji codes (`:emoji_name:`) to Unicode characters
+- :page_facing_up: List all available emojis in Markdown or CSV format
 - :computer: Cross-platform support
 
 ## Installation
@@ -18,22 +18,16 @@ gem install gemoji-cli
 
 ## Usage
 
-### Basic Search
+### Filter Emoji Codes
 
-Search for emoji by name:
+Convert emoji codes in standard input to Unicode characters:
 
 ```bash
-gemoji search smile
+echo "Hello :smile: :wave:" | gemoji filter
+# Output: Hello 😊 👋
 ```
 
-This will display all emojis with "smile" in their name, description, or aliases:
-
-```
-😊 smile          - smiling face with smiling eyes
-😃 smiley         - grinning face with big eyes
-😄 smile_cat      - grinning cat with smiling eyes
-...
-```
+This will convert all valid emoji codes (`:emoji_name:`) to their corresponding Unicode characters. Custom emoji codes will remain unchanged.
 
 ### List All Emojis
 
@@ -41,6 +35,31 @@ Display all available emojis:
 
 ```bash
 gemoji list
+```
+
+By default, this will output a Markdown-formatted table:
+
+```markdown
+| Name | Raw |
+|------|-----|
+| :smile: | 😊 |
+| :wave: | 👋 |
+...
+```
+
+You can also get the output in CSV format:
+
+```bash
+gemoji list --format=csv
+```
+
+This will output:
+
+```csv
+Name,Raw
+:smile:,😊
+:wave:,👋
+...
 ```
 
 ## Development
