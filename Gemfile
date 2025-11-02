@@ -10,6 +10,7 @@ group :development do
   gem "irb"
   gem "repl_type_completor"
 
+  gem "docquet"
   gem "rubocop"
   gem "rubocop-performance"
   gem "rubocop-rake"
