@@ -36,7 +36,9 @@ jobs:
 
     - name: Update version file
       run: |
-        sed -i 's/VERSION = ".*"/VERSION = "${{ github.event.inputs.version }}"/' lib/${{ env.GEM_NAME }}/version.rb
+        GEM_PATH="${{ env.GEM_NAME }}"
+        GEM_PATH="${GEM_PATH//-//}"  # Convert hyphens to slashes for path
+        sed -i 's/VERSION = ".*"/VERSION = "${{ github.event.inputs.version }}"/' "lib/$GEM_PATH/version.rb"
 
     - name: Update CHANGELOG.md
       run: |
@@ -51,7 +53,9 @@ jobs:
 
     - name: Commit changes
       run: |
-        git add lib/${{ env.GEM_NAME }}/version.rb CHANGELOG.md
+        GEM_PATH="${{ env.GEM_NAME }}"
+        GEM_PATH="${GEM_PATH//-//}"  # Convert hyphens to slashes for path
+        git add "lib/$GEM_PATH/version.rb" CHANGELOG.md
         git commit -m "$(cat <<'EOF'
         :bookmark: Prepare release v${{ github.event.inputs.version }}
 
